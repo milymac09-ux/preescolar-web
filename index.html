@@ -1,0 +1,403 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <meta charset="UTF-8">
+    <title>Untitled</title>
+    
+
+  </head>
+    
+  <body>
+  <!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>🎠 Carrusel de las Américas</title>
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:Arial;
+}
+
+body{
+background:#fff7fb;
+color:#444;
+}
+
+/* HEADER */
+header{
+background:white;
+padding:15px 8%;
+display:flex;
+justify-content:space-between;
+align-items:center;
+position:sticky;
+top:0;
+box-shadow:0 3px 10px rgba(0,0,0,0.1);
+}
+
+header h1{
+color:#ff4f9a;
+}
+
+/* HERO */
+.hero{
+height:90vh;
+display:flex;
+align-items:center;
+justify-content:center;
+text-align:center;
+background:
+linear-gradient(rgba(0,0,0,0.35),rgba(0,0,0,0.35)),
+url('https://images.unsplash.com/photo-1516627145497-ae6968895b74');
+background-size:cover;
+}
+
+.overlay{
+background:rgba(255,255,255,0.85);
+padding:40px;
+border-radius:25px;
+max-width:750px;
+}
+
+button{
+background:linear-gradient(45deg,#ff4f9a,#ff85c2);
+border:none;
+padding:12px 18px;
+border-radius:20px;
+color:white;
+font-weight:bold;
+cursor:pointer;
+margin:5px;
+transition:0.3s;
+}
+
+button:hover{
+transform:scale(1.05);
+}
+
+/* ACTIVIDADES */
+.cards{
+display:flex;
+justify-content:center;
+flex-wrap:wrap;
+gap:15px;
+margin-top:20px;
+}
+
+.card{
+width:190px;
+padding:20px;
+background:white;
+border-radius:20px;
+box-shadow:0 0 15px rgba(255,79,154,0.2);
+cursor:pointer;
+transition:0.3s;
+}
+
+.card:hover{
+transform:translateY(-8px);
+}
+
+.mensaje{
+margin-top:20px;
+padding:20px;
+background:#fff;
+border-radius:15px;
+box-shadow:0 0 10px rgba(0,0,0,0.1);
+display:none;
+font-weight:bold;
+color:#ff4f9a;
+}
+
+/* GALERÍA */
+.gallery{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
+gap:15px;
+}
+
+.gallery img{
+width:100%;
+border-radius:15px;
+}
+
+.frase{
+text-align:center;
+font-size:14px;
+color:#ff4f9a;
+font-weight:bold;
+margin-top:5px;
+}
+
+/* PAPÁS */
+.papas{
+text-align:center;
+background:#fff0f7;
+padding:60px;
+border-radius:25px;
+}
+
+/* WHATSAPP */
+.whatsapp{
+position:fixed;
+bottom:20px;
+right:20px;
+background:#25D366;
+width:60px;
+height:60px;
+border-radius:50%;
+display:flex;
+justify-content:center;
+align-items:center;
+font-size:28px;
+text-decoration:none;
+color:white;
+}
+
+/* CALENDARIO */
+.calendario{
+padding:60px 8%;
+text-align:center;
+background:white;
+margin-top:30px;
+border-radius:25px;
+}
+
+select{
+padding:10px;
+border-radius:10px;
+margin-bottom:20px;
+}
+
+table{
+width:100%;
+max-width:900px;
+margin:auto;
+border-collapse:collapse;
+}
+
+th,td{
+border:1px solid #ddd;
+padding:12px;
+font-size:14px;
+}
+
+th{
+background:#ff4f9a;
+color:white;
+}
+
+</style>
+</head>
+
+<body>
+
+<header>
+<h1>🎠 Carrusel de las Américas</h1>
+</header>
+
+<!-- HERO -->
+<section class="hero">
+<div class="overlay">
+
+<h2>✨ Un lugar donde cada niño crece con amor, seguridad, imaginación y felicidad infinita ✨</h2>
+
+<p>
+Aquí cada día es una aventura educativa llena de juegos, valores, creatividad y momentos que construyen recuerdos para toda la vida 💖🌈
+</p>
+
+<button>🌈 Inscripciones Abiertas</button>
+
+</div>
+</section>
+
+<!-- ACTIVIDADES -->
+<section>
+<h2>🌟 Áreas de aprendizaje</h2>
+
+<div class="cards">
+
+<div class="card" onclick="mostrar('Movimiento que fortalece cuerpo y confianza en los niños.')">🏃‍♂️ Movimiento</div>
+<div class="card" onclick="mostrar('La creatividad abre mundos llenos de imaginación y colores.')">🎨 Creatividad</div>
+<div class="card" onclick="mostrar('La lectura desarrolla mente, lenguaje y sueños.')">📖 Lectura</div>
+<div class="card" onclick="mostrar('La convivencia enseña respeto, amistad y amor.')">🤝 Convivencia</div>
+
+</div>
+
+<div id="mensaje" class="mensaje"></div>
+</section>
+
+<!-- GALERÍA -->
+<section>
+<h2>📸 Galería</h2>
+
+<div class="gallery">
+
+<div>
+<img src="https://i.ibb.co/YT1QTk1N/IMG-2085.jpg">
+<div class="frase">🌈 “Cada niño aprende a su propio ritmo con alegría”</div>
+</div>
+
+<div>
+<img src="https://i.ibb.co/hJzWxZwR/IMG-2051.jpg">
+<div class="frase">💖 “La infancia es la base de todos los sueños”</div>
+</div>
+
+<div>
+<img src="https://i.ibb.co/93w73RmW/IMG-2044.jpg">
+<div class="frase">🎨 “Aprender jugando crea felicidad verdadera”</div>
+</div>
+
+</div>
+</section>
+
+<!-- CALENDARIO COMPLETO -->
+<section class="calendario">
+
+<h2>📅 Calendario Escolar Completo</h2>
+
+<select onchange="cambiar(this.value)">
+<option>2024</option>
+<option>2025</option>
+<option>2026</option>
+<option>2027</option>
+<option>2028</option>
+<option>2029</option>
+<option>2030</option>
+  
+</select>
+
+<table>
+<tr><th>Mes</th><th>Actividad</th></tr>
+
+<tr><td>Enero</td><td>Inicio de ciclo y adaptación</td></tr>
+<tr><td>Febrero</td><td>Amor y amistad</td></tr>
+<tr><td>Marzo</td><td>Evaluaciones y proyectos</td></tr>
+<tr><td>Abril</td><td>Juegos y actividades recreativas</td></tr>
+<tr><td>Mayo</td><td>Día del niño y festivales</td></tr>
+<tr><td>Junio</td><td>Cierre de actividades</td></tr>
+<tr><td>Julio</td><td>Vacaciones</td></tr>
+<tr><td>Agosto</td><td>Nuevo ciclo escolar</td></tr>
+<tr><td>Septiembre</td><td>Fiestas patrias</td></tr>
+<tr><td>Octubre</td><td>Actividades culturales</td></tr>
+<tr><td>Noviembre</td><td>Día de muertos</td></tr>
+<tr><td>Diciembre</td><td>Posadas y cierre anual</td></tr>
+</table>
+
+</section>
+
+<!-- PAPÁS -->
+<section class="papas">
+
+<h2>👨‍👩‍👧 Mensaje para papás</h2>
+
+<p>
+🌟 Gracias por confiar en nosotros 🌟  
+En este espacio cuidamos lo más valioso que tienen: sus hijos 💖  
+Aquí formamos niños felices, seguros, respetuosos y llenos de sueños que algún día cambiarán el mundo 🌈✨
+</p>
+
+</section>
+
+<!-- WHATSAPP -->
+<a class="whatsapp"
+href="https://api.whatsapp.com/send?phone=525548668105&text=Hola%20quiero%20información%20del%20preescolar🧸🌈"
+target="_blank">
+💬
+</a>
+
+<script>
+
+function mostrar(texto){
+document.getElementById("mensaje").style.display="block";
+document.getElementById("mensaje").innerHTML=texto;
+}
+
+function cambiar(año){
+alert("Calendario actualizado al año " + año + " (demo interactivo)");
+}
+
+</script>
+
+</body>
+</html>
+<!-- CUENTOS INTERACTIVOS -->
+<section style="padding:80px 8%; text-align:center; background:linear-gradient(135deg,#ffe6f7,#e6f7ff);">
+
+<h2 style="color:#ff4f9a; margin-bottom:25px;">📚 Cuentos Mágicos Interactivos ✨</h2>
+
+<p style="max-width:750px;margin:auto;margin-bottom:30px;">
+Aquí encontrarás historias llenas de magia, amor y valores que ayudan a los niños a crecer felices, compartir y soñar 🌈💖🧚
+</p>
+
+<div style="display:flex;flex-wrap:wrap;justify-content:center;gap:15px;">
+
+<button onclick="mostrarCuento('hadas')">🧚 Hadas del bosque</button>
+<button onclick="mostrarCuento('familia')">👨‍👩‍👧 La familia</button>
+<button onclick="mostrarCuento('compartir')">🤝 Compartir</button>
+
+</div>
+
+<div id="cuentoBox" style="
+margin-top:25px;
+max-width:750px;
+margin-left:auto;
+margin-right:auto;
+background:white;
+padding:25px;
+border-radius:20px;
+box-shadow:0 10px 20px rgba(0,0,0,0.15);
+display:none;
+font-size:16px;
+line-height:1.6;
+color:#444;
+transform:scale(0.9);
+transition:0.4s;
+">
+</div>
+
+</section>
+
+<script>
+
+function mostrarCuento(tipo){
+
+let texto = "";
+
+if(tipo === "hadas"){
+texto = "🧚 En un bosque mágico, las hadas cuidan cada flor, cada árbol y cada sueño de los niños. Por las noches esparcen polvo de estrellas para llenar el mundo de paz, luz y felicidad ✨💖";
+}
+
+if(tipo === "familia"){
+texto = "👨‍👩‍👧 La familia es el lugar donde siempre hay amor, apoyo y abrazos. Cada miembro es importante y juntos forman un hogar lleno de felicidad, respeto y unión 💕";
+}
+
+if(tipo === "compartir"){
+texto = "🤝 Compartir es dar con el corazón. Cuando compartimos juguetes, tiempo o sonrisas, el mundo se vuelve más bonito y todos somos más felices 🌈";
+}
+
+let box = document.getElementById("cuentoBox");
+
+box.style.display = "block";
+box.innerHTML = texto;
+
+// efecto de animación
+box.style.transform = "scale(0.9)";
+setTimeout(()=>{
+box.style.transform = "scale(1)";
+},50);
+
+}
+
+</script>
+    
+  </body>
+  
+</html>
